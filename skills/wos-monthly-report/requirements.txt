@@ -1,0 +1,7 @@
+# 核心依赖
+python-docx>=1.1.0        # 生成 Word 报表与带图简报
+openpyxl>=3.1.0          # 生成 Excel 月报
+pillow>=10.0.0           # 3D 饼图与信息图绘制（不依赖 matplotlib）
+segno>=1.6.0             # 门户二维码（本地生成，无需联网）
+playwright>=1.40.0       # 抓取中科院分区、渲染 docx 预览与门户校验
+mammoth>=1.6.0           # docx → HTML 预览

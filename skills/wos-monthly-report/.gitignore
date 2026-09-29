@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+# 运行产物：数据与报表一律不入库（数据库条款/个人信息）
+wos-work/
+*.xlsx
+*.csv
+*_parsed.json
+*_cas*.json
+*_alldb.txt
+*_c1_full.json
+月报图表/
+portal/
+!examples/**/*.csv

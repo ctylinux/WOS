@@ -1,0 +1,29 @@
+{
+  "college_map": {
+    "Coll Ocean Food & Biol Engn": "海洋食品与生物工程学院",
+    "Coll Food & Biol Engn": "海洋食品与生物工程学院",
+    "Coll Marine Equipment & Mech Engn": "海洋装备与机械工程学院",
+    "Fujian Key Lab Energy Cleaning Utilizat & Dev": "海洋装备与机械工程学院",
+    "Key Lab Ocean Renewable Energy Equipment Fujian Pr": "海洋装备与机械工程学院",
+    "Sch Ocean Informat Engn": "海洋信息工程学院",
+    "Coll Ocean Informat Engn": "海洋信息工程学院",
+    "Fisheries Coll": "水产学院",
+    "Sch Marine Engn": "轮机工程学院",
+    "Sch Sci": "理学院",
+    "Sch Comp Engn": "计算机工程学院",
+    "Coll Comp Engn": "计算机工程学院",
+    "Comp Engn Coll": "计算机工程学院",
+    "Sch Phys Educ": "体育学院",
+    "Phys Educ Inst": "体育学院",
+    "Chengyi Coll": "诚毅学院",
+    "Coll Harbour & Coastal Engn": "港口与海岸工程学院",
+    "Nav Coll": "航海学院",
+    "Coll Nav": "航海学院",
+    "Coll Arts & Design": "美术与设计学院",
+    "Coll Fine Arts & Design": "美术与设计学院",
+    "Sch Finance & Econ": "财经学院"
+  },
+  "manual_college": {
+    "MEDLINE:42263602": "师范学院"
+  }
+}
