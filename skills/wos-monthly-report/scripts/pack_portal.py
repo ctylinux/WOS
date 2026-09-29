@@ -26,6 +26,9 @@ if URL:
 html = open(f"{SRC}/index.html", encoding="utf-8").read()
 
 # 2) 收集 ../ 形式的交付物链接，复制进 downloads/ 并改写链接
+#    先清空旧下载目录，避免上一版未被引用的文件残留（未挂链接但仍可被 URL 访问）
+if os.path.isdir(f"{OUT}/downloads"):
+    shutil.rmtree(f"{OUT}/downloads")
 names = sorted(set(re.findall(r'href="\.\./([^"]+)"', html)))
 missing = []
 for name in names:

@@ -54,27 +54,59 @@ PY_ORDER = ["材料科学", "地球科学", "法学", "工程技术", "管理学
             "计算机科学", "教育学", "经济学", "军事学", "农林科学", "人文科学", "社会科学",
             "生物学", "数学", "物理与天体物理", "心理学", "药学", "医学", "艺术学", "综合性期刊"]
 OTHERS = "其他（未被2025版分区表收录）"
+def _p(pid, tab, org, cn, csv, alldb, c1, woscc, pfx):
+    return dict(id=pid, tab=tab, org=org, period_cn=cn, csv=csv, alldb=alldb,
+                c1=c1, woscc=woscc, pfx=pfx)
+
+
 PERIODS = [
-    dict(id="q1", tab="2026年1—3月 季报", csv="闽南师范大学_2026年1-3月_WOS论文_含中科院分区.csv",
-         alldb="mnnu_q1_alldb.txt", c1="mnnu_q1_c1_full.json", woscc="mnnu_q1_woscc_full.txt"),
-    dict(id="q2", tab="2026年4—6月 季报", csv="闽南师范大学_2026年4-6月_WOS论文_含中科院分区.csv",
-         alldb="mnnu_q2_alldb.txt", c1="mnnu_q2_c1_full.json", woscc="mnnu_q2_woscc_full.txt"),
-    dict(id="m01", tab="2026年1月 月报", csv="闽南师范大学_2026年1月_WOS论文_含中科院分区.csv",
-         alldb="mnnu_m01_alldb.txt", c1="mnnu_m01_c1_full.json", woscc="mnnu_m01_woscc_full.txt"),
-    dict(id="m02", tab="2026年2月 月报", csv="闽南师范大学_2026年2月_WOS论文_含中科院分区.csv",
-         alldb="mnnu_m02_alldb.txt", c1="mnnu_m02_c1_full.json", woscc="mnnu_m02_woscc_full.txt"),
-    dict(id="m03", tab="2026年3月 月报", csv="闽南师范大学_2026年3月_WOS论文_含中科院分区.csv",
-         alldb="mnnu_m03_alldb.txt", c1="mnnu_m03_c1_full.json", woscc="mnnu_m03_woscc_full.txt"),
-    dict(id="m04", tab="2026年4月 月报", csv="闽南师范大学_2026年4月_WOS论文_含中科院分区.csv",
-         alldb="mnnu_m04_alldb.txt", c1="mnnu_m04_c1_full.json", woscc="mnnu_m04_woscc_full.txt"),
-    dict(id="m05", tab="2026年5月 月报", csv="闽南师范大学_2026年5月_WOS论文_含中科院分区.csv",
-         alldb="mnnu_m05_alldb.txt", c1="mnnu_m05_c1_full.json", woscc="mnnu_m05_woscc_full.txt"),
-    dict(id="m06", tab="2026年6月 月报", csv="闽南师范大学_2026年6月_WOS论文_含中科院分区.csv",
-         alldb="mnnu_jun_alldb.txt", c1="mnnu_jun_c1_full.json", woscc="mnnu_jun_woscc_full.txt"),
-    dict(id="m07", tab="2026年7月 月报", csv="闽南师范大学_2026年7月_WOS论文_含中科院分区.csv",
-         alldb="mnnu_jul_alldb.txt", c1="mnnu_jul_c1_full.json", woscc="mnnu_jul_woscc_full.txt"),
-    dict(id="m08", tab="2026年8月 月报", csv="闽南师范大学_2026年8月_WOS论文_含中科院分区.csv",
-         alldb="mnnu_aug_alldb.txt", c1="mnnu_aug_c1_full.json", woscc="mnnu_aug_woscc_full.txt"),
+    # 闽南师范大学
+    _p("q1", "闽南师大 2026年1—3月 季报", "闽南师范大学", "2026年1-3月",
+       "闽南师范大学_2026年1-3月_WOS论文_含中科院分区.csv", "mnnu_q1_alldb.txt",
+       "mnnu_q1_c1_full.json", "mnnu_q1_woscc_full.txt", ["2026-01", "2026-02", "2026-03"]),
+    _p("q2", "闽南师大 2026年4—6月 季报", "闽南师范大学", "2026年4-6月",
+       "闽南师范大学_2026年4-6月_WOS论文_含中科院分区.csv", "mnnu_q2_alldb.txt",
+       "mnnu_q2_c1_full.json", "mnnu_q2_woscc_full.txt", ["2026-04", "2026-05", "2026-06"]),
+    _p("m01", "闽南师大 2026年1月 月报", "闽南师范大学", "2026年1月",
+       "闽南师范大学_2026年1月_WOS论文_含中科院分区.csv", "mnnu_m01_alldb.txt",
+       "mnnu_m01_c1_full.json", "mnnu_m01_woscc_full.txt", ["2026-01"]),
+    _p("m02", "闽南师大 2026年2月 月报", "闽南师范大学", "2026年2月",
+       "闽南师范大学_2026年2月_WOS论文_含中科院分区.csv", "mnnu_m02_alldb.txt",
+       "mnnu_m02_c1_full.json", "mnnu_m02_woscc_full.txt", ["2026-02"]),
+    _p("m03", "闽南师大 2026年3月 月报", "闽南师范大学", "2026年3月",
+       "闽南师范大学_2026年3月_WOS论文_含中科院分区.csv", "mnnu_m03_alldb.txt",
+       "mnnu_m03_c1_full.json", "mnnu_m03_woscc_full.txt", ["2026-03"]),
+    _p("m04", "闽南师大 2026年4月 月报", "闽南师范大学", "2026年4月",
+       "闽南师范大学_2026年4月_WOS论文_含中科院分区.csv", "mnnu_m04_alldb.txt",
+       "mnnu_m04_c1_full.json", "mnnu_m04_woscc_full.txt", ["2026-04"]),
+    _p("m05", "闽南师大 2026年5月 月报", "闽南师范大学", "2026年5月",
+       "闽南师范大学_2026年5月_WOS论文_含中科院分区.csv", "mnnu_m05_alldb.txt",
+       "mnnu_m05_c1_full.json", "mnnu_m05_woscc_full.txt", ["2026-05"]),
+    _p("m06", "闽南师大 2026年6月 月报", "闽南师范大学", "2026年6月",
+       "闽南师范大学_2026年6月_WOS论文_含中科院分区.csv", "mnnu_jun_alldb.txt",
+       "mnnu_jun_c1_full.json", "mnnu_jun_woscc_full.txt", ["2026-06"]),
+    _p("m07", "闽南师大 2026年7月 月报", "闽南师范大学", "2026年7月",
+       "闽南师范大学_2026年7月_WOS论文_含中科院分区.csv", "mnnu_jul_alldb.txt",
+       "mnnu_jul_c1_full.json", "mnnu_jul_woscc_full.txt", ["2026-07"]),
+    _p("m08", "闽南师大 2026年8月 月报", "闽南师范大学", "2026年8月",
+       "闽南师范大学_2026年8月_WOS论文_含中科院分区.csv", "mnnu_aug_alldb.txt",
+       "mnnu_aug_c1_full.json", "mnnu_aug_woscc_full.txt", ["2026-08"]),
+    # 集美大学
+    _p("jmu_m08", "集美大学 2026年8月 月报", "集美大学", "2026年8月",
+       "集美大学_2026年8月_WOS论文_含中科院分区.csv", "jmu_aug_alldb.txt",
+       "jmu_aug_c1_full.json", "jmu_aug_woscc_full.txt", ["2026-08"]),
+    # 海南师范大学
+    _p("hn_q1", "海南师大 2026年1—3月 季报", "海南师范大学", "2026年1-3月",
+       "海南师范大学_2026年1-3月_WOS论文_含中科院分区.csv", "hainan_q1_alldb.txt",
+       "hainan_q1_c1_full.json", "hainan_q1_woscc_full.txt", ["2026-01", "2026-02", "2026-03"]),
+    _p("hn_q2", "海南师大 2026年4—6月 季报", "海南师范大学", "2026年4-6月",
+       "海南师范大学_2026年4-6月_WOS论文_含中科院分区.csv", "hainan_q2_alldb.txt",
+       "hainan_q2_c1_full.json", "hainan_q2_woscc_full.txt", ["2026-04", "2026-05", "2026-06"]),
+] + [
+    _p(f"hn_m{m:02d}", f"海南师大 2026年{m}月 月报", "海南师范大学", f"2026年{m}月",
+       f"海南师范大学_2026年{m}月_WOS论文_含中科院分区.csv", f"hainan_m{m:02d}_alldb.txt",
+       f"hainan_m{m:02d}_c1_full.json", f"hainan_m{m:02d}_woscc_full.txt", [f"2026-{m:02d}"])
+    for m in range(1, 9)
 ]
 
 
@@ -104,7 +136,21 @@ def c1_map_from_woscc(path):
     return {c[idx["UT"]]: c[idx["C1"]] for c in rows}
 
 
-def college_of(ut, c1):
+_CMAP_CACHE = {}
+
+
+def org_college_map(org):
+    """按机构加载学院映射（闽南师大用脚本内置表，集美/海南读各自的 json）。"""
+    if org not in _CMAP_CACHE:
+        name = "hainan" if "海南" in org else ("jmu" if "集美" in org else "mnnu")
+        try:
+            _CMAP_CACHE[org] = json.load(open(f"{W}/{name}_college_map.json", encoding="utf-8"))
+        except Exception:
+            _CMAP_CACHE[org] = {}
+    return _CMAP_CACHE[org]
+
+
+def college_of(ut, c1, cmap=None):
     if ut in MANUAL_COLLEGE:
         return MANUAL_COLLEGE[ut]
     m = re.match(r"^\[([^\]]*)\]\s*(.*?)(?:\s*;\s*\[|$)", c1.get(ut, "") or "")
@@ -112,8 +158,10 @@ def college_of(ut, c1):
         return "未识别单位"
     parts = [x.strip() for x in m.group(2).split(",")]
     raw = parts[1] if len(parts) > 1 else parts[0]
-    if re.match(r"^\d+\s+\w", raw) or re.match(r"^[A-Z][a-z]+ \d{5}", raw) or re.match(r"^.+\d{5}$", raw):
+    if re.match(r"^\d+\s+\w", raw) or re.match(r"^[A-Z][a-z]+ \d{5}", raw) or re.match(r"^.+ \d{5}$", raw) or re.match(r"^.+ \d{5}$", raw):
         return "未标注二级单位"
+    if cmap and raw in cmap:
+        return cmap[raw]
     return COLLEGE_MAP.get(raw, raw)
 
 
@@ -136,51 +184,49 @@ def build_period(p):
     elif os.path.exists(f"{W}/{p['woscc']}"):
         c1 = c1_map_from_woscc(f"{W}/{p['woscc']}")
     rows_csv = list(csv.DictReader(open(f"{W}/{p['csv']}", encoding="utf-8-sig")))
-    fu = f"{ORG}是否第一单位"
+    org = p["org"]
+    fu = f"{org}是否第一单位"
+    cmap = org_college_map(org)
+    pfx = p.get("pfx") or []
     recs = []
     for r in rows_csv:
         ut = ti2ut.get(norm(r.get("篇名", "")), "")
         subj = r.get("中科院大类学科") or OTHERS
         if subj == "未被2025版收录":
             subj = OTHERS
-        recs.append(dict(ut=ut, ti=r.get("篇名", ""), au=r.get("作者", ""), so=r.get("期刊来源", ""),
+        recs.append(dict(ut=ut, ti=r.get("篇名", ""), au=("" if PUBLIC else r.get("作者", "")), so=r.get("期刊来源", ""),
                          su=subj, q=r.get("大类分区", ""), top=(r.get("Top期刊") == "是"),
-                         fu=(r.get(fu) == "是"), da=r.get("入库时间", ""), pd=r.get("正式出版时间", ""),
-                         ea=r.get("EA时间", ""), col=college_of(ut, c1)))
-    return dict(id=p["id"], tab=p["tab"], raw=raw, dropped=dropped, records=recs,
+                         fu=(r.get(fu) == "是"),
+                         pin=any((r.get("正式出版时间") or "").startswith(x) for x in pfx),
+                         da=r.get("入库时间", ""), pd=r.get("正式出版时间", ""),
+                         ea=r.get("EA时间", ""), col=college_of(ut, c1, cmap)))
+    return dict(id=p["id"], tab=p["tab"], org=org, cn=p["period_cn"], raw=raw, dropped=dropped, records=recs,
                 formal=len(formal_ut) if formal_ut else len(recs))
 
 
+PUBLIC = bool(os.environ.get("PORTAL_PUBLIC"))   # 公开演示版：隐去作者姓名与第一作者贡献率表述
 data = {}
 for p in PERIODS:
     try:
         data[p["id"]] = build_period(p)
         d = data[p["id"]]
         yes = sum(1 for r in d["records"] if r["fu"])
-        print(f"  {d['tab']}: 原始 {d['raw']} → 正式 {len(d['records'])} | 第一单位 {yes} "
+        yes_pin = sum(1 for r in d["records"] if r["fu"] and r["pin"])
+        print(f"  {d['tab']}: 原始 {d['raw']} → 正式 {len(d['records'])} | 第一单位(含跨期) {yes} "
+              f"| 第一单位且当期正式出版 {yes_pin} "
               f"| 未识别学院 {sum(1 for r in d['records'] if r['col'] in ('未识别单位','未标注二级单位') and r['fu'])}")
     except Exception as e:
         print(f"  [skip] {p['id']}: {e}")
 
-FILES = [
-    ("闽南师范大学_2026年1-3月_WOS论文_含中科院分区.xlsx", "1—3月季报 明细表（Excel）"),
-    ("闽南师范大学_2026年4-6月_WOS论文_含中科院分区.xlsx", "4—6月季报 明细表（Excel）"),
-    ("闽南师范大学_2026年1-3月_学科贡献率统计.xlsx", "1—3月学科贡献率统计（学科×学院＋第一作者）"),
-    ("2026年1-3月闽南师范大学Web of Science收录论文简报（带图）.docx", "1—3月 带图简报（Word）"),
-    ("2026年7月闽南师范大学Web of Science收录论文简报（带图）.docx", "7月 带图简报（Word）"),
-    ("月报图表/2026年6月/2026年6月_学科贡献率_汇总.png", "6月 各学院对学科贡献率饼图（汇总）"),
-    ("月报图表/2026年6月/2026年6月_手绘信息图.png", "6月 手绘思维导图信息图"),
-    ("闽南师范大学_2026年4月_WOS论文_含中科院分区.xlsx", "4月月报 明细表（Excel）"),
-    ("闽南师范大学_2026年5月_WOS论文_含中科院分区.xlsx", "5月月报 明细表（Excel）"),
-    ("闽南师范大学_2026年8月_WOS论文_含中科院分区.xlsx", "8月月报 明细表（Excel）"),
-    ("2026年8月闽南师范大学Web of Science收录论文简报（带图）.docx", "8月 带图简报（Word，表＋饼图合一）"),
-    ("月报图表/2026年4月/2026年4月_学科贡献率_汇总.png", "4月 各学院对学科贡献率饼图（汇总）"),
-    ("月报图表/2026年4月/2026年4月_手绘信息图.png", "4月 手绘思维导图信息图"),
-    ("月报图表/2026年5月/2026年5月_学科贡献率_汇总.png", "5月 各学院对学科贡献率饼图（汇总）"),
-    ("月报图表/2026年5月/2026年5月_手绘信息图.png", "5月 手绘思维导图信息图"),
-    ("月报图表/2026年8月/2026年8月_学科贡献率_汇总.png", "8月 各学院对学科贡献率饼图（汇总）"),
-    ("月报图表/2026年8月/2026年8月_手绘信息图.png", "8月 手绘思维导图信息图"),
-]
+FILES = []                     # 精简发布：只挂汇总类交付物（简报 / 信息图 / 贡献率汇总），不含逐篇明细
+for _p in PERIODS:
+    _org, _cn = _p["org"], _p["period_cn"]
+    _d = f"月报图表/{'' if _org == '闽南师范大学' else _org}{_cn}"
+    for _f, _lab in ((f"{_d}/{_cn}_手绘信息图.png", f"{_org} {_cn} 手绘信息图"),
+                     (f"{_d}/{_cn}_学科贡献率_汇总.png", f"{_org} {_cn} 各学院对学科贡献率（汇总饼图）"),
+                     (f"{_cn}{_org}Web of Science收录论文简报（带图）.docx", f"{_org} {_cn} 带图简报（Word）")):
+        if os.path.exists(f"{W}/{_f}"):
+            FILES.append((_f, _lab))
 deliv = [(f, t) for f, t in FILES if os.path.exists(f"{W}/{f}")]
 
 payload = json.dumps({"org": ORG, "periods": data}, ensure_ascii=False, separators=(",", ":"))
@@ -250,8 +296,8 @@ html = f"""<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
 <header><div class="wrap">
   <div>
     <h1>高校WOS论文收录智能分析月报系统</h1>
-    <div class="sub">{ORG}图书馆 · 按月／按季自动产出收录统计、分区结构、学院贡献率与信息图</div>
-    <div class="badge">可视化层由 Hermes Agent 技能直接生成（不再依赖 WorkBuddy）</div>
+    <div class="sub">闽南师范大学 · 集美大学 · 海南师范大学（同一流水线多机构复用）· 按月／按季自动产出收录统计、分区结构、学院贡献率与信息图</div>
+    <div class="badge">可视化层由 Hermes Agent 技能直接生成</div>
   </div>
   <div class="qr"><img src="qr.png" alt="入口二维码"><span>扫码／打开链接访问</span></div>
 </div></header>
@@ -260,6 +306,7 @@ html = f"""<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
   <h2>一、在线看板</h2>
   <div class="tabs" id="tabs"></div>
   <div class="kpis" id="kpis"></div>
+  <div class="lg" id="kpnote" style="margin:10px 2px 0;color:#6b7d94;font-size:13px;line-height:1.7"></div>
 
   <div class="grid2" style="margin-top:16px">
     <div class="card"><h2 style="margin-top:0">分区结构</h2><div id="quart"></div></div>
@@ -267,7 +314,7 @@ html = f"""<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
   </div>
 
   <div class="card" style="margin-top:16px">
-    <h2 style="margin-top:0">学科 × 学院贡献率<span class="lg">　（点击学科展开；贡献率＝该学院第一作者论文数 ÷ 该学科论文总数）</span></h2>
+    <h2 style="margin-top:0">学科 × 学院贡献率<span class="lg">　（点击学科展开；贡献率＝该学院第一作者论文数 ÷ 该学科<strong>当期正式出版</strong>论文总数）</span></h2>
     <div id="contrib"></div>
   </div>
 
@@ -326,14 +373,19 @@ function renderTabs() {{
 function render() {{
   const P = DATA.periods[cur], recs = P.records;
   const yes = recs.filter(r => r.fu).length;
+  const yesPin = recs.filter(r => r.fu && r.pin).length;
   const q = {{}}; recs.forEach(r => {{ const k = r.q || '未被2025版收录'; q[k] = (q[k]||0)+1; }});
   const top = recs.filter(r => r.top).length;
   const su = subjectOrder(recs);
   const qs = ['1区','2区','3区','4区','未被2025版收录'].filter(k => q[k]);
   $('#kpis').innerHTML = [
-    ['原始检索', P.raw, '条'], ['正式发表', recs.length, '篇'], ['第一单位=本校', yes, '篇'],
+    ['原始检索', P.raw, '条'], ['正式发表', recs.length, '篇'],
+    ['第一单位 且 当期正式出版', yesPin, '篇'], ['第一单位（含跨期）', yes, '篇'],
     ['1 区', q['1区']||0, '篇'], ['Top 期刊', top, '篇'], ['学科数', su.length, '个'], ['来源期刊', new Set(recs.map(r=>r.so)).size, '种']
   ].map(([a,b,c]) => `<div class="kpi"><i>${{a}}</i><b>${{b}}</b><s>${{c}}</s></div>`).join('');
+  $('#kpnote').innerHTML = '口径说明：<b>正式发表</b>＝剔除预印本、更正/撤稿通知等非研究论文后的正式记录；'
+    + '<b>第一单位 且 当期正式出版</b>＝第一作者单位为本机构且正式刊期(PD)落在本期内（与月报/简报口径一致，学院贡献率按此统计）；'
+    + '<b>第一单位（含跨期）</b>另含检索窗口内先上线(EA)但正式刊期在别期的论文，仅作参考。';
 
   const qcol = {{'1区':'#0E9BD3','2区':'#E57030','3区':'#4CA52C','4区':'#FFC000','未被2025版收录':'#A5A5A5'}};
   $('#quart').innerHTML = qs.map(k => `<div class="bar"><span class="nm">${{k}}</span>
@@ -350,8 +402,8 @@ function render() {{
   }}).join('');
 
   $('#contrib').innerHTML = su.map(k => {{
-    const rows = recs.filter(r => r.su===k && r.fu);
-    if (!rows.length) return `<div class="subj"><div class="hd"><span>${{k}}</span><span class="lg">本期无本校第一单位论文</span></div></div>`;
+    const rows = recs.filter(r => r.su===k && r.fu && r.pin);
+    if (!rows.length) return `<div class="subj"><div class="hd"><span>${{k}}</span><span class="lg">本期无本校第一单位且当期正式出版的论文</span></div></div>`;
     const m = {{}}; rows.forEach(r => m[r.col] = (m[r.col]||0)+1);
     const items = Object.entries(m).sort((a,b) => b[1]-a[1]);
     const seg = items.map(([c,v],i) => `<i style="width:${{100*v/rows.length}}%;background:${{C[i%C.length]}}"></i>`).join('');
@@ -385,6 +437,18 @@ function fillTable() {{
 }}));
 renderTabs(); render();
 </script></body></html>"""
+
+if PUBLIC:                      # 公开演示版：去掉作者列、隐藏第一作者表述，并加提示条
+    html = (html.replace('<th style="width:190px">作者</th>', '')
+                .replace('<td>${esc(r.au)}</td>', '')
+                .replace('搜索篇名／作者／期刊', '搜索篇名／期刊')
+                .replace('（学科×学院＋第一作者）', '（学科×学院）')
+                .replace('<h2 style="margin-top:0">学科 × 学院贡献率',
+                         '<div style="background:#fff7e6;border:1px solid #ffd591;padding:8px 12px;'
+                         'border-radius:6px;margin-bottom:12px;color:#7c4a03">公开演示版：逐篇明细已隐去'
+                         '作者姓名，第一作者贡献率统计仅限馆内使用。</div>'
+                         '<h2 style="margin-top:0">学科 × 学院贡献率'))
+    print("[public] 已隐去作者列 / 第一作者贡献率表述，并加入公开演示提示")
 
 os.makedirs(OUTDIR, exist_ok=True)
 open(f"{OUTDIR}/index.html", "w", encoding="utf-8").write(html)

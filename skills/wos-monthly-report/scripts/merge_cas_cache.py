@@ -9,10 +9,11 @@ import json
 import os
 import sys
 
-W = os.environ.get("WOS_WORKDIR", os.path.expanduser("~/wos-work"))
+W = os.environ.get("WOS_WORKDIR", "$WOS_WORKDIR")
 out_path = sys.argv[1] if len(sys.argv) > 1 else f"{W}/mnnu_cas_all.json"
+extra = sys.argv[2:]                      # 显式追加的缓存文件（文件名不带 cas_raw 时必传，否则会被静默忽略）
 
-paths = sorted(set(glob.glob(f"{W}/mnnu_*_cas_raw.json") + glob.glob(f"{W}/*cas_raw.json")),
+paths = sorted(set(glob.glob(f"{W}/mnnu_*_cas_raw.json") + glob.glob(f"{W}/*cas_raw.json") + extra),
                key=os.path.getmtime, reverse=True)
 merged, errored = {}, {}
 for p in paths:
