@@ -1,0 +1,36 @@
+作品门户（高校WOS论文收录智能分析月报系统）访问说明
+==================================================
+
+一、本机访问（Windows 浏览器直接可用，已验证 HTTP 200）
+    http://localhost:8080/portal/
+    备用：http://127.0.0.1:8080/portal/ 或 http://172.18.37.25:8080/portal/（WSL 的 IP，重启会变）
+
+二、服务启动 / 停止
+    一键：双击桌面「启动门户.bat」（会开一个窗口，并自动打开浏览器）
+    命令行：bash /home/zhangly/workspace/start_portal.sh
+    停止：关闭那个服务窗口，或在窗口里按 Ctrl+C
+    注意：服务是临时进程，WSL 或 Hermes 重启后需要重新启动一次。
+
+三、手机扫码访问（当前不可用，原因与两种解法）
+    现状：二维码里编的是 localhost，手机上 localhost = 手机自己，永远打不开；
+          本机当前 WiFi 地址是 192.168.1.103，但 WSL 的 8080 只对 Windows 宿主可见，
+          局域网里的手机还连不上。
+    解法 A（局域网，需要管理员权限，一次配置长期有效）
+        以「管理员身份」打开 PowerShell（或 CMD），执行两条命令：
+            netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=8080 ^
+                connectaddress=172.18.37.25 connectport=8080
+            netsh advfirewall firewall add rule name="Portal 8080" dir=in action=allow protocol=TCP localport=8080
+        然后把二维码地址改成 http://192.168.1.103:8080/portal/ 重新生成：
+            PORTAL_URL=http://192.168.1.103:8080/portal/ python3 build_portal.py
+        手机连同一个 WiFi 即可扫码打开。
+        注意：WSL 的 IP（connectaddress）每次重启会变，变了要重新执行第一条命令。
+    解法 B（公网，评审/异地扫码推荐）
+        把 portal/ 目录下的静态文件发布到任意静态托管（如学校/图书馆服务器、
+        GitHub Pages、Gitee Pages、对象存储静态网站），再用发布后的地址重新生成二维码：
+            PORTAL_URL=https://你的地址/portal/ python3 build_portal.py
+        大赛要求「可扫码访问的测试链接」，建议用解法 B 的地址作为最终提交链接。
+
+四、重新生成二维码 / 页面
+    python3 /home/zhangly/workspace/build_portal.py            # 默认 localhost 地址
+    PORTAL_URL=<新地址> python3 /home/zhangly/workspace/build_portal.py    # 指定地址
+    产物：portal/index.html（自包含页面）、portal/qr.png（二维码）
